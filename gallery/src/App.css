@@ -127,7 +127,7 @@ img {
 }
 
 .image_container::after{
-	content: 'jdglkjfgklja';
+	content: '';
 	position: absolute;
 	background-color: black;
 	opacity: 0.6;
@@ -140,28 +140,47 @@ img {
 
 }
 
-.image_container:hover.image_container::after{
+
+.icon_container{
+	display: flex;
+	gap:2em;
+	position: absolute;
+	display:none;
+
+}
+.image_container:hover::after{
 	display: block !important;
 	
 }
 
-.image_container:hover .download_icon{
-	opacity: 1;
+.image_container:hover .icon_container{
+	display:flex;
 	
 
 }
 
 .download_icon{
-	position: absolute;
+
 	z-index: 100;
 	transform: scale(2.5);
 	color:white;
-	opacity: 0;
+	opacity: 1;
 	
 
 	
 }
 
+
+.preview{
+	z-index: 100;
+	transform: scale(2);
+	color:white;
+	opacity: 1;
+	cursor:pointer;
+
+	
+
+}
 .download_icon:hover{
 	cursor: pointer;
 }
@@ -171,5 +190,93 @@ img {
 	gap: 0.5rem;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	
+	
+}
+
+/* carousel */
+.carousel {
+	display: flex;
+	overflow: hidden;
+  }
+  
+  .carousel-item {
+	flex: 1;
+	opacity: 0;
+	transition: opacity 0.5s;
+  }
+  
+  .carousel-item.active {
+	opacity: 1;
+  }
+  
+
+
+/* ....... */
+
+
+/* image prieveiew styles */
+
+.preview_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	/* Additional styling for the preview overlay */
+  }
+  
+  .preview_content {
+	
+	text-align: center;
+	position: relative;
+  }
+  
+  .preview_content img {
+	width: 600px;
+	border-radius: 8px;
+	cursor: pointer;
+	/* Additional styling for the enlarged image */
+  }
+  
+  .close_button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: rgba(0, 0, 0, 0.699);
+	color: white;
+	padding: 5px 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	
+	/* Additional styling for the close button */
+  }
+/* ................. */
+
+
+@media screen and (max-width:672px){
+	.preview{
+		display: none !important;
+	}
+
+
+	.image_container::after{
+		width:fit-content;
+		
+	}
+
+	.download_icon{
+		background: linear-gradient(0deg, rgba(0,0,0,0.5) 30%, rgba(255,255,255,0.3) 100%);
+		border-radius: 0 0 3px 3px;
+	}
+
+	
+
+
 	
 }

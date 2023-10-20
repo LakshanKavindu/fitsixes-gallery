@@ -1,10 +1,10 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon ./server.js localhost 7000"
+    "server": "nodemon ./server.js localhost 7000",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +20,6 @@
   "devDependencies": {
     "eslint": "^8.51.0",
     "eslint-plugin-react": "^7.33.2"
-  }
+  },
+  "description": ""
 }
